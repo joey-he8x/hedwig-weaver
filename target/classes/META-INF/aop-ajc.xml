@@ -1,0 +1,10 @@
+<aspectj>
+<aspects>
+<aspect name="com.yihaodian.testframework.weaver.managerbean.TestManagerBean"/>
+<aspect name="com.yihaodian.testframework.weaver.managerbean.hedwig.HedwigContextManager"/>
+<aspect name="com.yihaodian.testframework.weaver.jmx.JmxManagement"/>
+<aspect name="com.yihaodian.testframework.weaver.util.logging.LogManagement"/>
+<aspect name="com.yihaodian.testframework.weaver.util.logging.LogManagement$Acessor"/>
+</aspects>
+</aspectj>
+
