@@ -21,7 +21,7 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>1.7.3</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
@@ -39,6 +39,32 @@
 					<artifactId>commons-logging</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>2.5.6.SEC03</version>
+        </dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.23</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-core</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.emory.mathcs.util</groupId>
+			<artifactId>emory-util-collections</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>javax</groupId>
+		    <artifactId>javaee-api</artifactId>
+		    <version>6.0</version>
+		    <scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>
@@ -82,7 +108,8 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<outputDirectory>/home/joey/workspace/yhdjava/client-hub/target/client-hub-1.0-SNAPSHOT/WEB-INF/lib</outputDirectory>
+					<!-- outputDirectory>/home/joey/workspace/yhdjava/client-hub/target/client-hub-1.0-SNAPSHOT/WEB-INF/lib</outputDirectory-->
+					<outputDirectory>/home/joey/CloudStore/Work/workspace/jmx-test1/target/jmx-test1-2.1.0-M1/WEB-INF/lib</outputDirectory>
 				</configuration>
 				<executions>
 					<execution>
@@ -92,7 +119,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>	
+			</plugin>
 		</plugins>
 		<resources>
 			<resource>

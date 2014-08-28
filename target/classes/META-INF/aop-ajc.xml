@@ -1,10 +1,30 @@
 <aspectj>
 <aspects>
-<aspect name="com.yihaodian.testframework.weaver.managerbean.TestManagerBean"/>
-<aspect name="com.yihaodian.testframework.weaver.managerbean.hedwig.HedwigContextManager"/>
-<aspect name="com.yihaodian.testframework.weaver.jmx.JmxManagement"/>
-<aspect name="com.yihaodian.testframework.weaver.util.logging.LogManagement"/>
-<aspect name="com.yihaodian.testframework.weaver.util.logging.LogManagement$Acessor"/>
+<aspect name="testframework.weaver.config.Initialization"/>
+<aspect name="testframework.weaver.monitor.operation.ServletMonitor"/>
+<aspect name="testframework.weaver.jmx.MonitorJmxManagement"/>
+<aspect name="testframework.weaver.util.logging.LogManagement$Acessor"/>
+<aspect name="testframework.weaver.monitor.component.AbstractXmlCallMonitor"/>
+<aspect name="testframework.weaver.jmx.StatsJmxManagement"/>
+<aspect name="testframework.weaver.util.logging.LogManagement"/>
+<aspect name="testframework.weaver.monitor.resource.JdbcConnectionMonitor"/>
+<aspect name="testframework.weaver.monitor.AbstractRequestMonitor$TrackParents"/>
+<aspect name="testframework.weaver.monitor.component.AbstractXmlProcessingMonitor"/>
+<aspect name="testframework.weaver.jmx.JmxManagement"/>
+<aspect name="testframework.weaver.managerbean.TestManagerBean"/>
+<aspect name="testframework.weaver.monitor.MonitorRuntimeControl"/>
+<aspect name="testframework.weaver.monitor.operation.SpringMvcMonitor"/>
+<aspect name="testframework.weaver.monitor.resource.AbstractResourceMonitor"/>
+<aspect name="testframework.weaver.monitor.AbstractRequestMonitor"/>
+<aspect name="testframework.weaver.monitor.resource.RemoteCallMonitor"/>
+<aspect name="testframework.weaver.monitor.operation.JaxmOperationMonitor"/>
+<aspect name="testframework.weaver.monitor.operation.AbstractOperationMonitor"/>
+<aspect name="testframework.weaver.managerbean.ehcache.EhchacheManager"/>
+<aspect name="testframework.weaver.monitor.operation.TemplateOperationMonitor"/>
+<aspect name="testframework.weaver.monitor.component.XmlParsingMonitor"/>
+<aspect name="testframework.weaver.managerbean.hedwig.HedwigContextManager"/>
+<aspect name="testframework.weaver.monitor.resource.JdbcStatementMonitor"/>
+<aspect name="testframework.weaver.monitor.resource.JaxmCallMonitor"/>
 </aspects>
 </aspectj>
 

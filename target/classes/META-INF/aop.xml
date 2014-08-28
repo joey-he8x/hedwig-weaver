@@ -2,7 +2,7 @@
     <weaver options="-proceedOnError -Xlintfile:META-INF/Xlint.properties"> 
     	<!--  -showWeaveInfo -verbose --> 
         <!-- don't reweave: allows us to avoid exposing more aspects for LTW -->   
-        <exclude within="com.yihaodian.testframework.weaver..*"/>
+        <exclude within="testframework.weaver..*"/>
         <exclude within="*..*CGLIB$*"/>
     </weaver>
 </aspectj>
