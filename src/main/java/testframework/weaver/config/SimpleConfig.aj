@@ -67,8 +67,8 @@ public class SimpleConfig extends AbstractConfigurator {
         JdbcStatementMonitor.aspectOf().setFailureDetectionStrategy(new DataAccessFailureDetection());
         
         AbstractOperationMonitor.setPerfStatsFactory(new PerfStatsFactoryImpl());
-        
-        ensureConnectorServer(server);
+        //use tomcat to manage JMX endpoint
+//        ensureConnectorServer(server);
 	}
     
     // to shutdown we unregister the registry and stop the connector server 
