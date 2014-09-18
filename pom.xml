@@ -127,7 +127,7 @@
 				<configuration>
 					<encoding>UTF-8</encoding>
 					<!-- outputDirectory>/home/joey/workspace/yhdjava/client-hub/target/client-hub-1.0-SNAPSHOT/WEB-INF/lib</outputDirectory-->
-					<outputDirectory>/home/joey/CloudStore/Work/workspace/jmx-test1/target/jmx-test1-2.1.0-M1/WEB-INF/lib</outputDirectory>
+					<!-- outputDirectory>/home/joey/CloudStore/Work/workspace/jmx-test1/target/jmx-test1-2.1.0-M1/WEB-INF/lib</outputDirectory-->
 				</configuration>
 				<executions>
 					<execution>
