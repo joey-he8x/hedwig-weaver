@@ -1,26 +1,32 @@
 package testframework.weaver.monitor.resource;
 
+import org.aopalliance.intercept.MethodInvocation;
+
+import com.yihaodian.architecture.hedwig.common.dto.ServiceProfile;
+
 import com.yihaodian.architecture.hedwig.client.event.BaseEvent;
 import com.yihaodian.architecture.hedwig.client.event.HedwigContext;
+import com.yihaodian.architecture.hedwig.client.event.engine.HedwigEventEngine;
 
 public aspect HedwigCallMonitor extends AbstractResourceMonitor {
     /** JAXM call to invoke Web service */
 	public pointcut hedwigHandle(HedwigContext context, BaseEvent event):
-		
-    public pointcut hessianCall(Object soapConnection, Object msg, Object endPoint) : 
-        withincode(* BaseHandler+.doHandle(..)) && call(public * javax.xml.soap.SOAPConnection.call*(..)) && target(soapConnection) && args(msg, endPoint);
+		execution(* HedwigEventEngine.syncPoolExec(..)) && args(context, event);
 
-    /** Monitor jax rpc reflective calls based on call metadata */
-    Object around(final Object soapConnection, final Object msg, final Object endPoint) : 
-            jaxmCall(soapConnection, msg, endPoint) && monitorEnabled() {
+    Object around(final HedwigContext context, final BaseEvent event) : 
+    	hedwigHandle(context, event) && monitorEnabled() {
+    	ServiceProfile sp = context.getLocator().getService();
+    	MethodInvocation invocation = event.getInvocation();
+    	final String method = new StringBuilder(sp.getServiceName()).append(".").append(invocation.getMethod().getName()).toString();
+    	
         RequestContext requestContext = new ResourceRequestContext() {
             
             public Object doExecute() {
-                return proceed(soapConnection, msg, endPoint);
+                return proceed(context, event);
             }
             
             public Object getKey() {
-                return endPoint.toString();
+                return method.intern();
             }
             
         };
