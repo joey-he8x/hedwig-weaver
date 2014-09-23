@@ -81,7 +81,7 @@ public aspect JdbcConnectionMonitor extends AbstractResourceMonitor {
     /** Use common accessors to return meaningful name for the resource accessed by this data source. */
     public String getNameForDataSource(DataSource ds) {
         // names are listed in descending preference order 
-        String possibleNames[] = { "getDatabaseName", "getDatabasename", "getUrl", "getURL", "getDataSourceName", "getDescription" };
+        String possibleNames[] = { "getDatabaseName", "getDatabasename", "getUrl", "getURL", "getDataSourceName", "getDescription", "getDataId" };
         String name = null;
         for (int i=0; name == null && i<possibleNames.length; i++) {
             try {            

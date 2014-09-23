@@ -17,7 +17,7 @@ public aspect HedwigCallMonitor extends AbstractResourceMonitor {
     	hedwigHandle(context, event) && monitorEnabled() {
     	ServiceProfile sp = context.getLocator().getService();
     	MethodInvocation invocation = event.getInvocation();
-    	final String method = new StringBuilder(sp.getServiceName()).append(".").append(invocation.getMethod().getName()).toString();
+    	final String method = new StringBuilder("hedwig_call:").append(sp.getServiceName()).append(".").append(invocation.getMethod().getName()).toString();
     	
         RequestContext requestContext = new ResourceRequestContext() {
             

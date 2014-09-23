@@ -101,10 +101,12 @@ public aspect JdbcStatementMonitor extends AbstractResourceMonitor {
             if (getParent() != null) {
                 Connection connection = null;
                 String sql = null;
-
-                synchronized (JdbcStatementMonitor.this) {
-                    connection = (Connection) statementCreators.get(curStatement);
-                    sql = (String) statementSql.get(curStatement);
+                
+                if(curStatement != null){
+	                synchronized (JdbcStatementMonitor.this) {
+	                	connection = (Connection) statementCreators.get(curStatement);
+	                    sql = (String) statementSql.get(curStatement);
+	                }
                 }
 
                 if (connection != null) {

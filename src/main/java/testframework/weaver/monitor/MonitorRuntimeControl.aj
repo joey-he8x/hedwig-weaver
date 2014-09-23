@@ -18,7 +18,7 @@ public aspect MonitorRuntimeControl pertypewithin(AbstractRequestMonitor+) {
     private static boolean globallyEnabled = true;
     
     after() returning: execution(new(..)) {
-//        enabled = true;
+        enabled = true;
     }
     
     Object around() : execution(* Configurator.config(..)) {
