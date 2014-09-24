@@ -11,12 +11,6 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<version>2.1.0-M1</version>
-			<artifactId>jmx-test1</artifactId>
-			<groupId>com.mycompany</groupId>
-			<type>war</type>
-		</dependency>
-		<dependency>
 			<groupId>com.yihaodian.architecture</groupId>
 			<artifactId>hedwig-client</artifactId>
 			<version>0.1.2-SNAPSHOT</version>
@@ -155,6 +149,23 @@
 							<goal>jar</goal>
 						</goals>
 					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+	            <executions>
+				    <execution>
+				        <id>copy-dependencies</id>
+				        <phase>package</phase>
+				        <goals>
+				            <goal>copy-dependencies</goal>
+				        </goals>
+				        <configuration>
+				            <outputDirectory>${project.build.directory}/libs</outputDirectory>
+				            <excludeTransitive>true</excludeTransitive>
+				            <stripVersion>true</stripVersion>
+				        </configuration>
+				    </execution>
 				</executions>
 			</plugin>
 		</plugins>
