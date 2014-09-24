@@ -11,6 +11,7 @@
  *******************************************************************/
 package testframework.weaver.track.operation;
 
+import testframework.weaver.track.PerfStats;
 import testframework.weaver.track.PerfStatsImpl;
 
 import java.util.HashMap;
@@ -76,6 +77,23 @@ public class OperationStatsImpl extends PerfStatsImpl implements OperationStats 
     
     public int getLevel() {
     	return level;
+    }
+    
+    /*
+     * (non-Javadoc)
+     * by Joey.he8x@qq.com
+     */
+    @Override
+    public void resetAll() {
+    	this.reset();
+    	for (Object m: resourceStats.entrySet()){
+    		Map.Entry e = (Map.Entry) m;
+    		((PerfStats)e.getValue()).reset();
+    	}
+    	for (Object m: operationStats.entrySet()){
+    		Map.Entry e = (Map.Entry) m;
+    		((PerfStats)e.getValue()).reset();
+    	}
     }
     
 }

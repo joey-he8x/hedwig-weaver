@@ -33,6 +33,8 @@ public interface PerfStats {
      */
     void reset();
     
+    void resetAll();
+    
     /**
      * @return total accurmulated time in milliseconds from all execution (since last reset).  
      */

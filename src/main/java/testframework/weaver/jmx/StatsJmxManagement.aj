@@ -29,6 +29,8 @@ public aspect StatsJmxManagement {
         int getCount();
         int getFailureCount();
         void reset();
+        //add by Joey.he8x@qq.com
+        void resetAll();
     }
     
     /** Make the @link PerfStats interface extend @link PerfStatsMBean, so all instances can be managed */

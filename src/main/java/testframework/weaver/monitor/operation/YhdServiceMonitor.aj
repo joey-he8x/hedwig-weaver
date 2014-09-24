@@ -19,7 +19,7 @@ public aspect YhdServiceMonitor extends AbstractOperationMonitor {
     public interface NotMonitoredAction {}
     
     protected pointcut methodSignatureControllerExec(Object controller):
-    	cflow(execution(* org.apache.catalina.connector.CoyoteAdapter.service())) && execution(public * com.y*h*d*..service..*(..))  && this(controller);
+    	(cflow(execution(* javax.servlet.Filter+.doFilter(..))) || cflow(execution(* javax.servlet.http.HttpServlet+.*(..))) ) && execution(public * com.y*h*d*..service..*(..)) &&!cflowbelow(execution(public * com.y*h*d*..service..*(..))) && this(controller);
             
 
     protected pointcut isMonitorEnabled() : if(aspectOf().isEnabled());

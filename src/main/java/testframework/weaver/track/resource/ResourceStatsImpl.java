@@ -13,6 +13,7 @@ package testframework.weaver.track.resource;
 
 import testframework.weaver.track.PerfStats;
 import testframework.weaver.track.PerfStatsImpl;
+import testframework.weaver.track.operation.OperationStats;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +33,20 @@ public class ResourceStatsImpl extends PerfStatsImpl implements ResourceStats {
             requestStats.put(requestKey, stats);
         }
         return stats;
+    }
+    
+    /*
+     * (non-Javadoc)
+     * @see testframework.weaver.track.PerfStatsImpl#resetAll()
+     * by Joey.he8x@qq.com
+     */
+    @Override
+    public void resetAll() {
+    	this.reset();
+    	for (Object m: requestStats.entrySet()){
+    		Map.Entry e = (Map.Entry) m;
+    		((PerfStats)e.getValue()).reset();
+    	}
     }
     
 }

@@ -68,6 +68,14 @@ public class PerfStatsImpl implements PerfStats {
         count = 0;
         failureCount = 0;
     }
+    
+    /*
+     * (non-Javadoc)
+     * by Joey.he8x@qq.com
+     */
+    public void resetAll() {
+    	
+    }
 
     public int getAccumulatedTime() {
         return accumulatedTime;
