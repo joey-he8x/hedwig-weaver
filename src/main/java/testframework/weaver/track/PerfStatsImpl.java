@@ -11,6 +11,14 @@
  *******************************************************************/
 package testframework.weaver.track;
 
+import javax.management.MBeanRegistration;
+import javax.management.MBeanServer;
+import javax.management.ObjectName;
+import javax.management.InstanceAlreadyExistsException;
+import javax.management.InstanceNotFoundException;
+
+import testframework.weaver.jmx.JmxManagement;
+
 /** 
  * Implements the @link glassbox.inspector.track.PerfStats interface.
  * 
@@ -69,12 +77,8 @@ public class PerfStatsImpl implements PerfStats {
         failureCount = 0;
     }
     
-    /*
-     * (non-Javadoc)
-     * by Joey.he8x@qq.com
-     */
-    public void resetAll() {
-    	
+    public void resetAll(){
+    	//need to be override
     }
 
     public int getAccumulatedTime() {

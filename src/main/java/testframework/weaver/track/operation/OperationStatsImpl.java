@@ -88,11 +88,11 @@ public class OperationStatsImpl extends PerfStatsImpl implements OperationStats 
     	this.reset();
     	for (Object m: resourceStats.entrySet()){
     		Map.Entry e = (Map.Entry) m;
-    		((PerfStats)e.getValue()).reset();
+    		((PerfStats)e.getValue()).resetAll();
     	}
     	for (Object m: operationStats.entrySet()){
     		Map.Entry e = (Map.Entry) m;
-    		((PerfStats)e.getValue()).reset();
+    		((PerfStats)e.getValue()).resetAll();
     	}
     }
     

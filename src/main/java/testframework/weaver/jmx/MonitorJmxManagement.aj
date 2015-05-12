@@ -11,12 +11,8 @@
  *******************************************************************/
 package testframework.weaver.jmx;
 
-import org.springframework.jmx.export.assembler.InterfaceBasedMBeanInfoAssembler;
-import org.springframework.jmx.export.assembler.MBeanInfoAssembler;
-
 import testframework.weaver.jmx.JmxManagement.ManagedBean;
 import testframework.weaver.monitor.AbstractRequestMonitor;
-import testframework.weaver.util.logging.LogManagement;
 
 /** 
  * Applies JMX management to monitors. 

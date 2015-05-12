@@ -129,7 +129,6 @@ public aspect JdbcConnectionMonitor extends AbstractResourceMonitor {
         protected Object getKey() {
             return databaseName;
         }
-
     };
 
     /** Associates connections with their database names */    

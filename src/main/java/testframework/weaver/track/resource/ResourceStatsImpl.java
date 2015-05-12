@@ -45,7 +45,7 @@ public class ResourceStatsImpl extends PerfStatsImpl implements ResourceStats {
     	this.reset();
     	for (Object m: requestStats.entrySet()){
     		Map.Entry e = (Map.Entry) m;
-    		((PerfStats)e.getValue()).reset();
+    		((PerfStats)e.getValue()).resetAll();
     	}
     }
     

@@ -73,5 +73,6 @@ public interface PerfStats {
     /**
      * @return the type of statistics (e.g., Servlet, Database)
      */
-    String getDescription();    
+    String getDescription();
+    
 }
